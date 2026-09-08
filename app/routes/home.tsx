@@ -130,6 +130,32 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Featured items */}
+      <section className="border-t border-ink/10 px-6 py-16 md:px-10 md:py-20">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="font-display text-2xl font-semibold">Popular items</h2>
+          <div className="mt-8 grid grid-cols-2 gap-6 md:grid-cols-4">
+            {featuredItems.map((item) => (
+              <div key={item.name} className="border border-ink/15 bg-white">
+                {/* <img src={item.image} alt={item.name} /> */}
+                <div className="aspect-square w-full bg-khaki/40">
+                  {item.img}
+                </div>
+                <div className="p-4">
+                  <p className="font-display text-base font-semibold">
+                    {item.name}
+                  </p>
+                  <p className="mt-1 text-sm text-slate">{item.desc}</p>
+                  <p className="mt-2 text-sm font-medium text-maroon">
+                    {item.price}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="border-t border-ink/10 px-6 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-6xl">
@@ -446,5 +472,52 @@ const faqs = [
   {
     q: "Do you take hand-me-downs?",
     a: "Yes — bring outgrown uniforms in good condition for credit toward the next size up.",
+  },
+];
+
+const featuredItems = [
+  {
+    name: "White Shirt",
+    desc: "Short sleeve, cotton-poly",
+    price: "KSh 650",
+    img: (
+      <img
+        src="https://finechef.co.ke/storage/app/public/product/2024-02-16-65cf5940cb077.webp"
+        alt="Short sleeve image"
+      />
+    ),
+  },
+  {
+    name: "Grey Trousers",
+    desc: "Straight fit, adjustable waist",
+    price: "KSh 900",
+    img: (
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHgDrVHeeip3EduyQrok7Aa-j_ecfL9BApXxLiRdUCGw&s=10"
+        alt="Grey trousers image"
+      />
+    ),
+  },
+  {
+    name: "School Sweater",
+    desc: "V-neck, house colour trim",
+    price: "KSh 1,200",
+    img: (
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM14d8PFj0GElcyHMjmd8dy-GcXG7zdH0_DCYC8eifnw&s=10"
+        alt="School sweater image"
+      />
+    ),
+  },
+  {
+    name: "PE Kit Set",
+    desc: "Shorts + t-shirt, house colours",
+    price: "KSh 850",
+    img: (
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7J10otPeqTvXt4FbdCllEDl92CU7yyEH8kMPoghXMDg&s=10"
+        alt="PE kit set image"
+      />
+    ),
   },
 ];
